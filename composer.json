@@ -1,0 +1,19 @@
+{
+    "name": "wjdnw/flop-machine",
+    "description": "flop-machine code",
+    "type": "l",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "wjdnw",
+            "email": "wjdnw@example.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Wjdnw\\FlopMachine\\": "src/"
+        }
+    }
+}
