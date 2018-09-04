@@ -8,8 +8,11 @@
 
 namespace Wjdnw\FlopMachine;
 
+use Illuminate\Http\Request;
 use Illuminate\Session\SessionManager;
 use Illuminate\Config\Repository;
+use Wjdnw\FlopMachine\Games\Base;
+
 class FlopMachineIndex
 {
     /**
@@ -34,9 +37,13 @@ class FlopMachineIndex
      * @param string $msg
      * @return string
      */
-    public function test_rtn($msg = ''){
+    public function test_rtn($msg = '', array $param)
+    {
 //        dd($this->config);
         $config_arr = $this->config->get('flopMachineConfig.options');
+
+        $base = new Base( $this->config, $param );
+        $base->initPoker();
 
         return [$msg.' <strong>from your custom develop package!</strong>>', $config_arr];
     }
